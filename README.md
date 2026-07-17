@@ -4,27 +4,35 @@
 
 ## Purpose
 
-Structology is the study of structure as a basis for understanding complex systems.
+Structology is the domain-neutral study of objects, relations, stages, transformations, transitions, invariants, provenance, verification, and failure in designed systems.
 
-It investigates how systems are organized through:
+It asks:
 
-- objects;
-- relationships;
-- boundaries;
-- stages;
-- transitions;
-- dependencies;
-- invariants;
-- decision rules;
-- evidence;
-- provenance;
-- authority.
+> **What structural organization makes a system understandable, reproducible, and transferable across domains?**
 
-Structology is concerned with structures that remain meaningful across different implementations, repositories, technologies, and domains.
+Structology is concerned with structures that remain meaningful across different implementations, repositories, technologies, and fields.
 
-## Governing Question
+## Foundational Thesis
 
-> **What structural organization makes a system understandable, reproducible, and transferable?**
+A designed system can be studied as typed objects undergoing bounded transformations under declared structural constraints.
+
+```text
+Objects
++
+Relations
++
+Stages
++
+Transformation Contracts
++
+Invariants
++
+Verification
++
+Provenance
++
+Failure Semantics
+```
 
 ## Core Model
 
@@ -39,44 +47,140 @@ Relationships
         ↓
 Structure
         ↓
+Transformations
+        ↓
 Patterns
         ↓
-Invariants
+Candidate Invariants
         ↓
 Understanding
 ```
 
-## Foundational Thesis
+## Universal Object Shape
 
-Complex systems become easier to understand when implementation details are separated from underlying structural responsibilities.
+A candidate domain-neutral object has:
 
 ```text
-Implementation
-        ↓
-Observation
-        ↓
-Structural Extraction
-        ↓
-Generalization
-        ↓
-Reusable Understanding
+Object {
+  identity
+  type
+  purpose
+  inputs
+  outputs
+  state
+  lifecycle
+  relationships
+  version
+  provenance
+  context
+  invariants
+  verification
+  failure state
+}
 ```
 
-Structology studies this transformation.
+The canon must determine which fields are foundational, optional, derived, or supplied by a domain profile.
+
+## Object, Methodology, and Execution
+
+The central separation is:
+
+```text
+Structology
+Defines domain-neutral structural types
+        ↓
+Domain Methodology
+Defines valid transformations for a domain
+        ↓
+Execution
+Creates instances and performs transformations
+```
+
+An object represents bounded state, structure, or information.
+
+A methodology defines how object instances may be transformed. It specifies admissible inputs, governing rules, preconditions, outputs, preserved invariants, verification, provenance, uncertainty, and failure semantics.
+
+Execution is a concrete event that applies a permitted transformation to specific object instances.
+
+```text
+Object
+        ↓
+Transformation Contract
+        ↓
+Transformation Event
+        ↓
+New Object
+```
+
+Therefore:
+
+```text
+Object
+≠
+Execution
+```
+
+```text
+Methodology
+≠
+Execution
+```
+
+```text
+Transformation Contract
+≠
+Transformation Event
+```
+
+## Stage and Transformation Contract
+
+A stage is a bounded structural context in which particular object types and transformations are valid.
+
+```text
+Stage {
+  inputs
+  rules
+  permitted transformations
+  outputs
+  verification
+  provenance
+  failure modes
+}
+```
+
+A transformation contract defines:
+
+```text
+Transformation {
+  source object type
+  source state or stage
+  governing rule
+  operation
+  target object type
+  target state or stage
+  preserved invariants
+  permitted changes
+  verification witness
+  provenance
+  failure state
+}
+```
+
+Structology defines the general form. Domain methodologies supply domain-specific semantics.
 
 ## Current Scope
 
-- Structural objects
-- Relationships and topology
-- System boundaries
-- Process stages
-- Governed transitions
-- Dependency structures
-- Structural invariants
-- Type–instance separation
-- Provenance and lineage
-- Structural comparison
-- Cross-domain structural patterns
+- Structural object types and instances
+- Relations and typed topology
+- Stages and bounded contexts
+- Transformation and transition contracts
+- Identity, state, version, and lineage
+- Dependency, reachability, and closure
+- Invariants and boundary conditions
+- Verification boundaries
+- Provenance and traceability
+- Failure semantics
+- Cross-domain structural comparison
 - Methods for extracting structure from practice
 
 ## Non-Scope
@@ -84,56 +188,79 @@ Structology studies this transformation.
 Structology does not itself:
 
 - conduct empirical investigations;
-- define domain-specific research protocols;
-- prove formal theories;
+- define research-specific evidence thresholds;
+- define engineering, medical, audit, or manufacturing procedures;
+- execute domain workflows;
+- prove domain-specific theories;
 - implement structural-analysis engines;
-- authorize execution;
-- mutate operational systems;
-- replace the disciplines to which it is applied.
+- authorize operational execution;
+- mutate external systems.
 
-Those responsibilities belong to downstream methodologies, research programs, formal systems, scientific instruments, and operational infrastructure.
+Those responsibilities belong to domain methodologies, research programs, formal systems, scientific instruments, and operational infrastructure.
 
 ## Relationship to Research Methodology
 
-Research Methodology is a domain-specific application of Structology.
+Research Methodology is a specialization of Structology.
 
 ```text
 Structology
-Defines structural principles
+Domain-neutral objects and transformations
         ↓
 Research Methodology
-Applies those principles to research
+Research-specific object and transformation contracts
         ↓
-Domain Research
-Creates investigation instances
+Research Execution
+Investigation-specific object instances
 ```
 
-Research Methodology applies structural concepts such as:
+For example, Structology may define the general concepts of object, stage, transformation, verification, provenance, and failure.
 
-- stages;
-- inputs and outputs;
-- first-class objects;
-- transition rules;
-- decision authority;
-- verification;
-- traceability;
-- failure conditions;
-- lifecycle state.
+Research Methodology specializes them as research requests, protocols, observations, evidence records, analyses, decisions, replications, and publications.
+
+A concrete investigation then creates and transforms instances of those types.
+
+## Cross-Domain Specialization
+
+```text
+Structology
+        ↓
+Research Methodology
+        ↓
+Research Execution
+```
+
+```text
+Structology
+        ↓
+Engineering Methodology
+        ↓
+Engineering Execution
+```
+
+```text
+Structology
+        ↓
+Audit Methodology
+        ↓
+Audit Execution
+```
+
+A domain may specialize the structural contract without changing its foundational meanings.
 
 ## Relationship to the Continufy Research Stack
 
 ```text
 Structology
-Structural discipline
+Domain-neutral structural theory
         ↓
 Research Methodology
-Research-process specification
+Research transformation contracts
         ↓
 MindShift
 Candidate abstractions and research requests
         ↓
 Architectural Boundary Research
-Empirical investigations
+Empirical investigation instances
         ↓
 Structural Analysis Foundations
 Formal structural theory
@@ -145,9 +272,7 @@ ContinuityOS
 Execution legitimacy
 ```
 
-Structology does not control these repositories.
-
-It provides a conceptual discipline for understanding the structures they expose.
+Structology does not control these repositories. It provides a domain-neutral vocabulary for understanding the objects, transformations, relations, and boundaries they expose.
 
 ## Structural Method
 
@@ -156,17 +281,17 @@ Practice
         ↓
 Observe
         ↓
-Extract
+Extract Objects and Activities
         ↓
-Identify Relationships
+Separate Objects from Execution
         ↓
-Discover Invariants
+Identify Relations and Transformations
         ↓
-Generalize
+Discover Candidate Invariants
         ↓
-Validate Across Domains
+Test Across Domains
         ↓
-Standardize
+Standardize Bounded Structure
 ```
 
 ## Core Distinctions
@@ -190,15 +315,33 @@ Execution
 ```
 
 ```text
-Evidence
+Stage
 ≠
-Decision
+Activity
 ```
 
 ```text
-Capability
+Relation
+≠
+Transformation
+```
+
+```text
+Transformation
+≠
+Verification
+```
+
+```text
+Verification
 ≠
 Authority
+```
+
+```text
+Evidence
+≠
+Decision
 ```
 
 ```text
@@ -209,20 +352,18 @@ Invariant
 
 ## Current Status
 
-This repository is a placeholder for the emerging discipline.
-
-Its immediate purpose is to preserve the distinction between:
+This repository preserves the boundary between:
 
 ```text
 Structology
-The general study of structure
+The general study of structural objects and transformations
 ```
 
 and:
 
 ```text
-Research Methodology
-One application of structural principles
+Domain Methodology
+A specialization that defines valid domain transformations
 ```
 
-Concepts should be promoted into this repository only after they are shown to generalize beyond a single research domain, software system, or repository implementation.
+Concepts should be promoted into Structology only after they are shown to generalize beyond a single research domain, software system, repository, or implementation.
