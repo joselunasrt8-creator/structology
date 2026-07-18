@@ -1,6 +1,8 @@
 # Structology
 
-> **Status:** Foundational placeholder
+> **Status:** Structology Candidate Model v0.1 (provisional; not empirically validated)
+
+The canonical candidate model is defined in [CANON.md](CANON.md). It provides the domain-neutral definitions, candidate methodology object, minimum transformation contract, distinction ledger, specialization boundary, limitations, and unresolved assumptions for Issue #14.
 
 ## Purpose
 
@@ -168,7 +170,7 @@ Transformation {
 
 Structology defines the general form. Domain methodologies supply domain-specific semantics.
 
-## Current Scope
+## Candidate Model Scope
 
 - Structural object types and instances
 - Relations and typed topology
@@ -180,8 +182,7 @@ Structology defines the general form. Domain methodologies supply domain-specifi
 - Verification boundaries
 - Provenance and traceability
 - Failure semantics
-- Cross-domain structural comparison
-- Methods for extracting structure from practice
+- Domain specialization boundaries
 
 ## Non-Scope
 
@@ -194,7 +195,11 @@ Structology does not itself:
 - prove domain-specific theories;
 - implement structural-analysis engines;
 - authorize operational execution;
-- mutate external systems.
+- mutate external systems;
+- perform cross-domain validation or define an audit protocol;
+- define transfer, forced-fit, or evidence criteria;
+- build schemas, validators, compilers, or runtime behavior;
+- claim universal applicability.
 
 Those responsibilities belong to domain methodologies, research programs, formal systems, scientific instruments, and operational infrastructure.
 
@@ -274,26 +279,6 @@ Execution legitimacy
 
 Structology does not control these repositories. It provides a domain-neutral vocabulary for understanding the objects, transformations, relations, and boundaries they expose.
 
-## Structural Method
-
-```text
-Practice
-        ↓
-Observe
-        ↓
-Extract Objects and Activities
-        ↓
-Separate Objects from Execution
-        ↓
-Identify Relations and Transformations
-        ↓
-Discover Candidate Invariants
-        ↓
-Test Across Domains
-        ↓
-Standardize Bounded Structure
-```
-
 ## Core Distinctions
 
 ```text
@@ -366,4 +351,4 @@ Domain Methodology
 A specialization that defines valid domain transformations
 ```
 
-Concepts should be promoted into Structology only after they are shown to generalize beyond a single research domain, software system, repository, or implementation.
+The repository currently stops at **Structology Candidate Model v0.1**. The model is a provisional candidate ready for an independent methodology repository to define a research instrument capable of testing it. No empirical validation or audit methodology is included here.
