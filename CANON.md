@@ -4,31 +4,36 @@
 >
 > **Validation status:** Not empirically validated
 >
-> **Boundary:** This document defines a candidate for later independent testing. It is not an audit instrument and makes no claim of universal applicability.
+> **Boundary:** This document defines a candidate for later independent testing. It is not an audit instrument and makes no claim of universal applicability, completeness, minimality, architectural necessity, or execution authority.
 
 ## 1. Model boundary
 
-Structology Candidate Model v0.1 describes a domain-neutral separation of structural description, rules for change, concrete change, and evaluation:
+Structology Candidate Model v0.1 investigates a candidate domain-neutral separation among structural description, rules for change, concrete change, and evaluation.
 
 ```text
-Structology
-Defines what exists
-        ↓
+Structural description
+        ↓ possible specialization
 Methodology
-Defines how objects may validly evolve
-        ↓
+        ↓ possible application
 Execution
-Performs one concrete transformation
-        ↓
+        ↓ possible evaluation
 Verification
-Evaluates the resulting event or artifact
 ```
 
-The arrows express specialization and use, not authority. Structology supplies general concepts. A methodology supplies the meanings and rules needed in a domain. An execution applies one declared contract to particular instances. Verification evaluates declared conditions without granting permission, legitimacy, or authority.
+The arrows express possible specialization and use, not authority or mandatory dependency. Structology proposes general concepts. A methodology may supply the meanings and rules needed in a domain. An execution may apply one declared contract to particular instances. Verification evaluates declared conditions without granting permission, legitimacy, or authority.
 
-## 2. Canonical definitions
+A domain may use only part of this model, require additional concepts, map the distinctions differently, or reject the candidate model entirely.
 
-These definitions are provisional, domain neutral, and normative within Candidate Model v0.1.
+```text
+Structural description ≠ Domain semantics
+Methodology ≠ Execution
+Verification ≠ Authority
+Model compatibility ≠ Architectural necessity
+```
+
+## 2. Canonical candidate definitions
+
+These definitions are provisional, domain neutral, and normative only within Candidate Model v0.1. Calling them canonical means they are the current reference definitions for testing this candidate version; it does not mean they are empirically established primitives.
 
 | Term | Definition |
 | --- | --- |
@@ -54,22 +59,24 @@ These definitions are provisional, domain neutral, and normative within Candidat
 | **Withdrawal** | A declared lifecycle change by which an entity is removed from prospective use without erasing its identity, history, or prior events. |
 | **Invalidation** | A declared determination that an entity or result does not satisfy specified requirements for a stated scope; it does not erase provenance or imply conclusions outside that scope. |
 
+The candidate set itself is under test. Independent evaluation may show that terms are redundant, composite, domain-specific, missing, or unnecessary.
+
 ## 3. Distinction ledger
 
-| Canonical distinction | Boundary |
+| Candidate distinction | Boundary |
 | --- | --- |
 | **Object Type ≠ Object Instance** | A type declares a class and its allowable structure; an instance is one identified occurrence governed by that declaration. |
 | **Object ≠ Execution** | An object is an identifiable bearer of state and relationships; execution is the performance or attempted performance of a change. An execution may consume, produce, or affect objects but is not interchangeable with them. |
 | **Methodology ≠ Execution** | A methodology declares reusable rules and boundaries; execution is one concrete application or attempted application of a declared rule. |
-| **Transformation Contract ≠ Transformation Event** | A contract declares a reusable kind of permitted change; an event records one application or attempt involving particular instances and inputs. |
+| **Transformation Contract ≠ Transformation Event** | A contract declares a reusable kind of change; an event records one application or attempt involving particular instances and inputs. |
 | **Transformation ≠ Verification** | Transformation changes or attempts to change an object; verification evaluates a declared event or artifact. Evaluation does not itself constitute that change. |
 | **Verification ≠ Authority** | Verification reports conformity against declared requirements. Permission, adoption, acceptance, or legitimacy must come from an authority outside verification unless separately assigned by a domain methodology. |
 
-These distinctions remain true even when one record contains information about both sides of a boundary.
+These are candidate analytical separations, not universal laws. Independent testing may show that a distinction is unnecessary, differently represented, or inseparable in some domains.
 
 ## 4. Candidate methodology object
 
-The methodology object is the provisional container for the declarations that govern allowable evolution. Classification describes each field's place in this candidate model, not whether a particular value is valid.
+The methodology object is a provisional container for declarations that govern allowable evolution. Classification describes each field's place in this candidate model, not whether the field is universally necessary or a particular value is valid.
 
 | Field | Classification | Candidate meaning |
 | --- | --- | --- |
@@ -86,11 +93,13 @@ The methodology object is the provisional container for the declarations that go
 | **Failure Semantics** | foundational | The declared meanings and consequences of failure outcomes. |
 | **Version** | foundational | The identifier for this declared form of the methodology. |
 
-No required field is classified as optional, derived, or unresolved in v0.1. Those classifications remain available for future candidate fields: **optional** means the field may be omitted without making the methodology object incomplete; **derived** means its value is determined from other declared values; **domain supplied** means Structology requires the place but does not supply its value; and **unresolved** means the candidate has not established its status. A field's classification does not supply its domain content.
+Within v0.1, no required field is classified as optional, derived, or unresolved. That is a property of this candidate version, not evidence that every domain requires every field. Future testing may demote, combine, remove, or add fields.
+
+For future candidate fields: **optional** means the field may be omitted without making the methodology object incomplete; **derived** means its value is determined from other declared values; **domain supplied** means Structology requires the place but does not supply its value; and **unresolved** means the candidate has not established its status. A field's classification does not supply its domain content.
 
 ## 5. Candidate transformation contract
 
-A transformation contract is complete at this candidate level only when it declares all of the following:
+Within Candidate Model v0.1, a transformation contract is considered complete only when it declares all of the following. This is a testable hypothesis about useful structural completeness, not a universal requirement established by evidence.
 
 | Contract field | Minimum declaration |
 | --- | --- |
@@ -106,66 +115,93 @@ A transformation contract is complete at this candidate level only when it decla
 | **Provenance requirement** | What origins, inputs, identities, contract version, event, and succession must be retained. |
 | **Failure state** | The declared state or outcome when admissibility, completion, postconditions, invariants, verification, or provenance requirements are not satisfied. |
 
-Preconditions are formed from the admissible source state, required inputs, governing rule, and applicable constraints. Postconditions are formed from the target type, resulting state, preserved invariants, and applicable verification and provenance requirements. Domains supply their content; Structology supplies only this general form.
+Preconditions are formed from the admissible source state, required inputs, governing rule, and applicable constraints. Postconditions are formed from the target type, resulting state, preserved invariants, and applicable verification and provenance requirements. Domains supply their content; Structology supplies only this candidate general form.
 
 ## 6. Domain specialization boundary
 
+Structology owns only the candidate general concepts and distinctions in this model. A domain owns its terminology, admissibility, evidence, semantics, decision rules, and authority model.
+
+A domain specialization may adopt all, some, or none of the candidate model. Successful translation into Structology terminology is not evidence that the translation is natural, useful, or better than a simpler domain-native representation.
+
+### Research example
+
+A research methodology may choose to specialize candidate concepts and a research execution may instantiate that specialization. Neither is defined here. This model does not prescribe research objects, evidence, evaluation thresholds, procedures, decisions, or execution legitimacy, and it does not implement an audit methodology.
+
+## 7. Relationship to Continufy
+
+Structology is not a required stage of the Continufy research or production topology.
+
+Other repositories may reference, specialize, test, reject, or ignore the candidate model. Such use does not make Structology authoritative over those repositories, and compatibility does not establish architectural necessity.
+
+Possible outcomes include partial reuse, narrower specialization, concept collapse, extension, replacement by an existing formalism, non-use, or retirement.
+
 ```text
-Structology Candidate Model
-        ↓
-Research Methodology
-        ↓
-Research Execution
+Research relationship ≠ runtime dependency
+Candidate primitive ≠ proven primitive
+Verification ≠ legitimacy
+Capability ≠ permission
 ```
 
-Structology owns only the general concepts and distinctions in this candidate model. A domain methodology owns its:
-
-- terminology;
-- admissibility;
-- evidence;
-- semantics; and
-- decision rules.
-
-Accordingly, a research methodology may specialize these concepts and a research execution may instantiate that specialization. Neither is defined here. This model does not prescribe research objects, evidence, evaluation thresholds, procedures, or decisions, and it does not implement an audit methodology.
-
-## 7. Known limitations
+## 8. Known limitations
 
 - The candidate model has not been empirically validated within or across domains.
-- The completeness and independence of the concepts have not been established.
+- The completeness, minimality, and independence of the concepts have not been established.
 - The field classifications and minimum transformation contract may change after independent testing.
 - The model does not establish how conflicts among constraints, invariants, lifecycle rules, or verification results are resolved.
 - The model records version relations but does not establish compatibility between versions.
 - Verification is defined structurally; no evidence model, measurement rule, or authority model is supplied.
+- The model does not establish whether its abstractions improve outcomes compared with simpler existing representations.
 - The model is documentation only and supplies no schema, validator, compiler, or runtime behavior.
 
-## 8. Unresolved assumptions
+## 9. Unresolved assumptions
 
 - Whether every domain can identify stable object types without changing the foundational meanings is unresolved.
-- Whether every admissible change can be expressed by the minimum transformation contract is unresolved.
+- Whether every useful domain requires a distinct Methodology object is unresolved.
+- Whether every admissible change can be expressed by the candidate transformation contract is unresolved.
+- Whether all candidate contract fields are independently necessary is unresolved.
 - Whether lifecycle, supersession, withdrawal, and invalidation apply uniformly to every candidate entity is unresolved.
 - Whether provenance requirements can remain domain neutral while still enabling sufficient traceability is unresolved.
 - Whether verification results require additional domain-neutral states beyond satisfied, not satisfied, and unresolved is unresolved.
 - Whether methodology composition requires additional concepts or fields is unresolved.
+- Whether existing formalisms provide equal or better explanatory power with fewer concepts is unresolved.
+- Whether the candidate vocabulary provides measurable value beyond disciplined naming is unresolved.
 
-These are candidates for later independent examination, not conclusions.
+These are candidates for independent examination, not conclusions.
 
-## 9. Explicit non-goals
+## 10. Falsification criteria
+
+Candidate Model v0.1 should be weakened, simplified, replaced, or rejected if independent testing shows that one or more of the following holds repeatedly:
+
+- unrelated domains require materially incompatible meanings for supposedly foundational concepts;
+- the candidate distinctions can be collapsed without losing explanatory or operational value;
+- required fields routinely create forced-fit representations;
+- important transformations cannot be represented without adding domain-specific exceptions to the general model;
+- a simpler existing representation performs as well or better on predefined evaluation criteria;
+- users can translate systems into the vocabulary but gain no measurable improvement in reproducibility, traceability, analysis, or decision quality; or
+- the model's apparent generality is produced mainly by definitions broad enough to fit anything.
+
+Positive evidence should require more than successful mapping. A transfer test should prospectively define what improvement or explanatory advantage would count as support.
+
+## 11. Explicit non-goals
 
 Candidate Model v0.1 does not:
 
 - perform cross-domain validation;
 - select audit domains;
-- define transfer criteria;
-- define forced-fit criteria;
+- define transfer criteria for its own validation;
 - define evidence models;
 - define audit protocols;
 - define methodology engineering;
 - build schemas;
 - build validators;
 - build runtime behavior;
-- build compilers; or
+- build compilers;
+- grant authority;
+- determine execution legitimacy; or
 - claim universal applicability.
 
-## 10. Completion boundary
+## 12. Completion boundary
 
-This document stops at **Structology Candidate Model v0.1**. It is ready to be referenced by an independent methodology repository that may separately define a research instrument capable of testing the candidate. No empirical validation or audit methodology is part of this version.
+This document stops at **Structology Candidate Model v0.1**. It is explicit enough to be independently tested but remains open to simplification, extension, replacement, rejection, or retirement.
+
+No empirical validation, audit methodology, runtime dependency, or commercialization claim is part of this version.
