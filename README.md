@@ -3,19 +3,30 @@
 > **Status:** Structology Candidate Model v0.1  
 > **Validation status:** Provisional and not empirically validated
 
-The canonical candidate model is defined in [CANON.md](CANON.md). The README introduces the repository boundary; the canon contains the normative candidate definitions, contracts, distinctions, limitations, and unresolved assumptions.
+The canonical candidate model is defined in [CANON.md](CANON.md). This README states why the repository exists, what problem the model is trying to solve, and what evidence would be required before stronger claims are justified.
 
 ## Purpose
 
-Structology is a proposed domain-neutral framework for describing objects, relationships, states, transformations, provenance, verification, and failure in designed systems.
+Structology investigates whether designed systems can be described using a small, reusable set of structural concepts without collapsing important distinctions between **what exists**, **rules for change**, **a concrete change**, and **evaluation of that change**.
 
-Its current governing question is:
+Its governing question is:
 
-> **What minimum structural concepts are needed to distinguish what exists, how it may change, what concretely happened, and how the result is evaluated?**
+> **What minimum structural concepts are necessary and sufficient to represent objects, relationships, states, transformations, provenance, verification, and failure across more than one designed-system domain without forcing domain-specific meaning into the general model?**
 
-Candidate Model v0.1 does not establish that these concepts apply universally or transfer naturally across independent domains. Those questions require a separate research instrument and empirical investigation.
+Candidate Model v0.1 proposes an answer. It does not establish that the answer is complete, minimal, independent, natural, or transferable.
 
-## Candidate Separation
+```text
+Candidate vocabulary ≠ discovered universal structure
+Conceptual coherence ≠ empirical validity
+Cross-domain resemblance ≠ natural transfer
+Formal separation ≠ practical usefulness
+```
+
+## Why this repository exists
+
+Many systems mix several different things into the same records or language: an object and an action on that object, a rule and an execution of the rule, or verification and authority. Structology proposes explicit distinctions so those categories can be examined separately.
+
+The candidate separation is:
 
 ```text
 Structology
@@ -31,14 +42,11 @@ Verification
 Evaluates the event or resulting artifact
 ```
 
-The arrows indicate specialization and use, not authority.
+The arrows indicate specialization and use, not authority or causal necessity.
 
-- **Structology** supplies provisional general concepts.
-- **A domain methodology** supplies domain meanings, admissibility rules, evidence requirements, and decision rules.
-- **An execution** applies one declared transformation contract to particular instances.
-- **Verification** evaluates declared conditions without itself granting permission, legitimacy, or authority.
+This separation is currently a **candidate analytical model**. Its value must be tested by asking whether independent domains can use it without semantic distortion and whether it improves analysis compared with simpler or domain-native representations.
 
-## Candidate Concepts
+## Candidate concepts
 
 Candidate Model v0.1 currently includes:
 
@@ -51,168 +59,161 @@ Candidate Model v0.1 currently includes:
 - execution;
 - verification requirements and verification results;
 - provenance;
-- failure semantics;
+- failure semantics; and
 - versioning, supersession, withdrawal, and invalidation.
 
-The precise candidate definitions and classifications are maintained in [CANON.md](CANON.md).
+The precise definitions and classifications are normative only within Candidate Model v0.1 and are maintained in [CANON.md](CANON.md).
 
-## Core Distinctions
-
-```text
-Object Type
-≠
-Object Instance
-```
+## Core distinctions
 
 ```text
-Object
-≠
-Execution
+Object Type ≠ Object Instance
+Object ≠ Execution
+Methodology ≠ Execution
+Transformation Contract ≠ Transformation Event
+Transformation ≠ Verification
+Verification ≠ Authority
 ```
 
-```text
-Methodology
-≠
-Execution
-```
+These distinctions are hypotheses about useful structural separation. Their usefulness, independence, completeness, and transferability remain open empirical questions.
 
-```text
-Transformation Contract
-≠
-Transformation Event
-```
+## What Structology does not yet know
 
-```text
-Transformation
-≠
-Verification
-```
+Candidate Model v0.1 has not established:
 
-```text
-Verification
-≠
-Authority
-```
+- that the proposed concepts are the minimum set required;
+- that the concepts are mutually independent;
+- that every relevant designed-system domain maps naturally to them;
+- that every admissible transformation fits the proposed contract;
+- that the distinctions improve reasoning or engineering outcomes;
+- that provenance can remain domain-neutral while remaining useful;
+- that methodology composition requires no additional primitives;
+- that domains will agree on stable object/state boundaries; or
+- that the framework adds value beyond existing modeling approaches.
 
-These are candidate analytical distinctions. Their usefulness and transferability remain subject to independent testing.
+These are research questions, not implementation backlog items.
 
-## Domain Specialization Boundary
+## Domain specialization boundary
+
+Structology supplies provisional general concepts. A domain methodology supplies the domain-specific semantics, admissibility rules, evidence requirements, verification thresholds, uncertainty treatment, decision rules, and authority model where applicable.
 
 ```text
 Structology Candidate Model
-        ↓
+        ↓ specialization
 Domain Methodology
-        ↓
+        ↓ instantiation
 Domain Execution
 ```
 
-Structology proposes a general vocabulary. A domain methodology owns its own:
+A successful mapping from one domain is not evidence of universality. A mapping can also be partial, forced, ambiguous, or failed.
 
-- terminology;
-- semantics;
-- object and relationship meanings;
-- admissibility rules;
-- evidence requirements;
-- verification thresholds;
-- uncertainty treatment;
-- decision rules;
-- authority model, when applicable.
+The model should not be modified during an evaluation merely to make a chosen domain fit unless that modification is recorded as an outcome that invalidates the frozen candidate for that test.
 
-A domain specialization must not be treated as evidence that the candidate model is universal. It is one possible application to be examined.
+## Relationship to SYNAPSE
 
-### Research example
+Structology and SYNAPSE have different roles.
 
 ```text
-Structology Candidate Model
-        ↓
-Research Methodology
-        ↓
-Research Execution
-```
-
-Research Methodology may specialize the candidate concepts as research requests, protocols, observations, evidence records, analyses, findings, replications, and publication artifacts. Concrete investigations create and transform instances of those research-specific types.
-
-Structology does not define those research objects or procedures.
-
-## Relationship to the Continufy R&D Repositories
-
-The repositories have separate responsibilities:
-
-```text
-MindShift
-Produces candidate abstractions and research questions
-        ↓
-Research Methodology
-Defines reusable research-method contracts and instruments
-        ↓
-Architectural Boundary Research
-Executes empirical investigations and produces evidence
-        ↓
-Structural Analysis Foundations
-Develops bounded formal theory
-        ↓
+Structology
+Candidate structural vocabulary / theory
+        ↓ may motivate
+Formal structural questions
+        ↓ may be implemented by
 SYNAPSE
-Produces deterministic structural analyses
-        ↓
-ContinuityOS
-Evaluates execution legitimacy where authority is required
+Deterministic structural analysis / evidence
 ```
 
-Structology does not control these repositories and does not grant authority to their artifacts. It supplies a provisional vocabulary that they may reference, specialize, test, reject, or refine within their own boundaries.
+SYNAPSE implementing a structural analysis does not validate Structology. Structology does not require SYNAPSE, and SYNAPSE does not inherit the validity of a broader structural theory.
 
-## Current Scope
+## Relationship to the Continufy R&D repositories
 
-Candidate Model v0.1 is limited to documentation of:
+Continufy repositories may reference, specialize, test, reject, or refine Structology concepts, but ecosystem membership does not validate the candidate model or create mandatory dependencies.
 
-- provisional domain-neutral concepts;
-- the Object–Methodology–Execution–Verification separation;
-- a candidate methodology object;
-- a candidate transformation contract;
-- a distinction ledger;
-- domain-specialization boundaries;
-- known limitations and unresolved assumptions.
+A useful responsibility separation is:
 
-## Non-Scope
+```text
+MindShift              candidate cognition / research questions
+Research Methodology   research contracts and instruments
+ABR                    empirical investigation
+Structural Foundations bounded formal theory
+SYNAPSE                deterministic structural analysis
+ContinuityOS           legitimacy / execution-boundary mechanisms
+```
+
+Structology sits beside these as a candidate general structural model. It does not control their artifacts, grant authority to them, or become true because they use its vocabulary.
+
+## Validation program
+
+The next stage belongs outside this repository and should use a prospectively frozen audit instrument.
+
+The strongest first test is a **cross-domain transfer audit**:
+
+1. freeze Candidate Model v0.1 and its definitions;
+2. select independent domains prospectively rather than because they obviously fit;
+3. obtain domain-native descriptions before mapping them to Structology;
+4. map each domain without altering the candidate model;
+5. classify each concept as natural fit, partial fit, forced fit, absent, ambiguous, or requiring a new primitive;
+6. compare against a simpler/domain-native representation;
+7. use independent adjudication where practical; and
+8. preserve negative and indeterminate outcomes.
+
+The audit should measure more than whether a mapping can be written. It should test whether the mapping preserves domain meaning and whether the distinctions provide measurable analytical value.
+
+## Evidence ladder
+
+Structology should earn stronger claims in stages:
+
+```text
+Candidate model explicit
+        ↓
+Independent domains can be mapped
+        ↓
+Mappings preserve native meaning
+        ↓
+Concepts transfer without forced fit
+        ↓
+Model beats or complements strong baselines
+        ↓
+Results replicate across domains
+        ↓
+Bounded claim of general usefulness
+```
+
+No stage implies the next.
+
+## Falsification boundary
+
+Candidate Model v0.1 should be revised, narrowed, or rejected if evidence shows that:
+
+- important domains require incompatible foundational meanings;
+- mappings repeatedly require forced fit;
+- supposedly distinct concepts collapse into one another in practice;
+- required primitives are systematically missing;
+- the minimum transformation contract fails on common domain changes;
+- domain-native models preserve meaning more accurately with less complexity;
+- the model adds no measurable analytical benefit; or
+- results do not replicate under independent mapping/adjudication.
+
+Negative results are valid outcomes and should remain visible in provenance.
+
+## Non-scope
 
 Structology does not currently:
 
-- perform cross-domain validation;
-- define or run an audit protocol;
-- select an audit cohort;
-- define natural-transfer, partial-fit, forced-fit, or failure criteria;
-- define research-specific evidence thresholds;
-- define engineering, audit, clinical, manufacturing, or other domain procedures;
 - execute domain workflows;
-- authorize scientific claims;
-- authorize operational execution;
-- prove domain-specific theories;
+- authorize scientific or operational claims;
+- grant authority or permission;
+- define domain-specific procedures or evidence thresholds;
 - implement structural-analysis engines;
 - build schemas, validators, compilers, registries, or runtime behavior;
 - mutate external systems;
+- perform the cross-domain validation itself; or
 - claim universal applicability.
 
-## Next Research Boundary
-
-The next stage belongs outside this repository:
-
-```text
-Structology Candidate Model v0.1
-        ↓
-Research Methodology
-Defines a cross-domain transfer audit instrument
-        ↓
-Architectural Boundary Research
-Runs pilot and cohort investigations
-        ↓
-Empirical transfer findings
-        ↓
-Proposed Structology refinements
-```
-
-The audit must be capable of returning positive, partial, forced-fit, failed, and indeterminate outcomes. Evidence from an audit may motivate revisions, but it does not automatically mutate this repository or establish universal validity.
-
-## Completion Boundary
+## Current boundary
 
 This repository currently stops at **Structology Candidate Model v0.1**.
 
-The model is explicit enough to be referenced by an independent methodology repository, but it remains provisional, unvalidated, and open to rejection or revision through later empirical work.
+The model is explicit enough to be frozen and tested independently. Its strongest present claim is therefore not that it describes designed systems generally, but that it provides a concrete candidate vocabulary and set of distinctions for testing that hypothesis.
+
+The next legitimate artifact is empirical evidence from an independent cross-domain transfer audit—not additional expansion of the candidate vocabulary before that test.
